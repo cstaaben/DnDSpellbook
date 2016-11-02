@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="rootLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <Accordion fx:id="spellListAccordion" prefHeight="571.0" prefWidth="645.0" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <fx:include source="leftLayout.fxml"></fx:include>
+            <!--<VBox fx:id="leftLayoutBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="spellbookChoiceBoxLbl" text="Spellbook:">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox fx:id="spellbookChoiceHBox">
+                     <children>
+                        <ChoiceBox fx:id="spellbookChoiceBox">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                        <Button mnemonicParsing="false" text="View">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <Button fx:id="viewAllSpellsBtn" layoutX="20.0" layoutY="72.0" mnemonicParsing="false" text="View All Spells">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Separator layoutX="10.0" layoutY="118.0" prefWidth="200.0" />
+                  <Text fx:id="filtersText" strokeType="OUTSIDE" strokeWidth="0.0" text="Filters" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="249.984375">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="classFilterLbl" text="Class">
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane fx:id="classFiltersGridPane">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <CheckBox fx:id="bardClassCheckBox" mnemonicParsing="false" text="Bard">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="clericClassCheckBox" mnemonicParsing="false" text="Cleric" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="druidClassCheckBox" mnemonicParsing="false" text="Druid" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="palClassCheckBox" mnemonicParsing="false" text="Paladin" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="rangerClassCheckBox" mnemonicParsing="false" text="Ranger" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="sorcClassCheckBox" mnemonicParsing="false" text="Sorcerer" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="warlockClassCheckBox" mnemonicParsing="false" text="Warlock" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="wizClassCheckBox" mnemonicParsing="false" text="Wizard" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <HBox fx:id="spellLvlHBox" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="spellLvlLbl" text="Spell Level:">
+                           <HBox.margin>
+                              <Insets left="10.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="spellLvlComboBox" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label fx:id="schoolFilterLbl" text="Magic School:">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane fx:id="schoolFilterGridPane">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <CheckBox fx:id="abjurSchoolCheckBox" mnemonicParsing="false" text="Abjuration" />
+                        <CheckBox fx:id="conjSchoolCheckBox" mnemonicParsing="false" text="Conjuration" GridPane.columnIndex="1" />
+                        <CheckBox fx:id="divSchoolCheckBox" mnemonicParsing="false" text="Divination" GridPane.rowIndex="1" />
+                        <CheckBox fx:id="enchSchoolCheckBox" mnemonicParsing="false" text="Enchantment" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <CheckBox fx:id="evocSchoolCheckBox" mnemonicParsing="false" text="Evocation" GridPane.rowIndex="2" />
+                        <CheckBox fx:id="illuSchoolCheckBox" mnemonicParsing="false" text="Illusion" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <CheckBox fx:id="necroSchoolCheckBox" mnemonicParsing="false" text="Necromancy" GridPane.rowIndex="3" />
+                        <CheckBox fx:id="transSchoolCheckBox" mnemonicParsing="false" text="Transmutation" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </GridPane>
+                  <Label fx:id="compFilterLbl" text="Components:">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox fx:id="compFilterHBox" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="matCompCheckBox" mnemonicParsing="false" text="M">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="somCompCheckBox" mnemonicParsing="false" text="S">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="verbCompCheckBox" mnemonicParsing="false" text="V">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                     <children>
+                        <CheckBox fx:id="ritCheckBox" mnemonicParsing="false" text="Ritual">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="concCheckBox" mnemonicParsing="false" text="Concentration">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>-->
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
